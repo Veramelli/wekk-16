@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./autocalc.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="title">
+                <h1>Калькулятор расчета стоимости вашего авто</h2>
+            </div>
+
+
+            <div class="model">
+                <div>Марка авто</div>
+                <select onchange="changeModel(event)">
+                    <option value="">Выберите марку</option>
+                    <option value="0">Audi</option>
+                    <option value="1">Mersedes</option>
+                    <option value="2">BMW</option>
+                    <option value="3">Volvo</option>
+                </select>
+            </div>
+
+            <div class="wheel">
+                <div>Руль</div>
+                <div>Правый руль
+                    <input type="radio" name="steeringwheel" onchange="rightWheel()">
+                </div>
+
+                <div>Левый руль
+                    <input type="radio" name="steeringwheel" onchange="leftWheel()">
+                </div>
+            </div>
+
+            <div class="fuel">
+                <div>Топливо</div>
+                <label>Дизель
+                    <input type="radio" name="fuel" onchange="diselFuel()">
+                </label>
+                <label>Бензин
+                    <input type="radio" name="fuel" onchange="gasFuel()">
+                </label>
+                <label>Электричество
+                    <input type="radio" name="fuel" onchange="electroFuel()">
+                </label>
+            </div>
+
+            <div class="yeahr">
+                <div>Годы выпуска</div>
+                <select onchange="changeYeahr(event)">
+                    <option value="2020">2020-...</option>
+                    <option value="2010">2010-2019</option>
+                    <option value="2000">2000-2009</option>
+                    <option value="1990">1990-1999</option>
+                    <option value="1980">1980-1989</option>
+                    <option value="1979">...-1979</option>
+                </select>
+            </div>
+
+            <div class="owner">
+                <div>
+                    <input type="checkbox" onchange="changeOwner()">
+                    Был только один владелец
+                </div>
+            </div>
+
+            <div class="volume">
+                <div>Объем двигателя, см3</div>
+                <input type="number" class="volumevalue">
+            </div>
+
+            <div>
+                <button onclick="calcPrise()">Рассчитать</button>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <script src="./autocalc.js"></script>
+
+</body>
+
+</html>
