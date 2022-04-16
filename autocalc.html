@@ -17,76 +17,84 @@
                 <h1>Калькулятор расчета стоимости вашего авто</h2>
             </div>
 
-
             <div class="model">
                 <div>Марка авто</div>
-                <select onchange="changeModel(event)">
+                <select class="changemodel">
                     <option value="">Выберите марку</option>
-                    <option value="0">Audi</option>
-                    <option value="1">Mersedes</option>
-                    <option value="2">BMW</option>
-                    <option value="3">Volvo</option>
+                    <option value="1">Audi</option>
+                    <option value="2">Mersedes</option>
+                    <option value="3">BMW</option>
+                    <option value="4">Volvo</option>
                 </select>
             </div>
 
             <div class="wheel">
                 <div>Руль</div>
-                <div>Правый руль
-                    <input type="radio" name="steeringwheel" onchange="rightWheel()">
-                </div>
+                <label>Правый руль
+                    <input type="radio" name="wheel" class="rightwheel">
+                </label>
 
-                <div>Левый руль
-                    <input type="radio" name="steeringwheel" onchange="leftWheel()">
-                </div>
+                <label>Левый руль
+                    <input type="radio" name="wheel" class="leftwheel">
+                </label>
             </div>
 
             <div class="fuel">
                 <div>Топливо</div>
                 <label>Дизель
-                    <input type="radio" name="fuel" onchange="diselFuel()">
+                    <input type="radio" name="fuel" class="diselfuel">
                 </label>
                 <label>Бензин
-                    <input type="radio" name="fuel" onchange="gasFuel()">
+                    <input type="radio" name="fuel" class="gasfuel">
                 </label>
                 <label>Электричество
-                    <input type="radio" name="fuel" onchange="electroFuel()">
+                    <input type="radio" name="fuel" class="electrofuel">
                 </label>
             </div>
 
             <div class="yeahr">
                 <div>Годы выпуска</div>
-                <select onchange="changeYeahr(event)">
-                    <option value="2020">2020-...</option>
-                    <option value="2010">2010-2019</option>
-                    <option value="2000">2000-2009</option>
-                    <option value="1990">1990-1999</option>
-                    <option value="1980">1980-1989</option>
-                    <option value="1979">...-1979</option>
+                <select class="changeyeahr">
+
+                    <option value="">Выберите год выпуска</option>
+                    <option value="10">2020-...</option>
+                    <option value="8">2010-2019</option>
+                    <option value="6">2000-2009</option>
+                    <option value="4">1990-1999</option>
+                    <option value="2">1980-1989</option>
+                    <option value="1">...-1979</option>
                 </select>
             </div>
 
             <div class="owner">
-                <div>
-                    <input type="checkbox" onchange="changeOwner()">
+                <label>
+                    <input class="changeowner" type="checkbox">
                     Был только один владелец
-                </div>
+                </label>
             </div>
 
             <div class="volume">
-                <div>Объем двигателя, см3</div>
+                <label>Объем двигателя, см3</label>
                 <input type="number" class="volumevalue">
             </div>
 
             <div>
                 <button onclick="calcPrise()">Рассчитать</button>
             </div>
+
+            <div class="result">
+                <div>
+                    Стоимость вашего авто:
+                </div>
+                <div id="result">0
+                </div>
+                <div>
+                    тыс.рублей
+                </div>
+            </div>
         </div>
 
-
     </div>
-
-
-
 
     <script src="./autocalc.js"></script>
 

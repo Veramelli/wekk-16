@@ -1,115 +1,46 @@
 function calcPrise() {
 
-    /*--функция выбора марки--*/
+    let sum = 0;
 
-    let models;
+    const models = document.querySelector(".changemodel").value;
+    console.log(models);
 
-    function changeModel(event) {
+    const rightwheels = document.querySelector(".rightwheel").checked;
+    console.log(rightwheels);
 
-        switch (event.target.value) {
-            case '0':
-                models = 1;
-                console.log(models);
-                break;
+    const leftwheels = document.querySelector(".leftwheel").checked;
+    console.log(leftwheels);
 
-            case '1':
-                models = 2;
-                console.log(models);
-                break;
+    const diselFuel = document.querySelector(".diselfuel").checked;
+    console.log(diselFuel);
 
-            case '2':
-                models = 3;
-                console.log(models);
-                break;
-            case '3':
-                models = 4;
-                console.log(models);
-                break;
-        }
-    }
+    const gasFuel = document.querySelector(".gasfuel").checked;
+    console.log(gasFuel);
 
-    /*--функции выбора руля--*/
+    const electroFuel = document.querySelector(".electrofuel").checked;
+    console.log(electroFuel);
 
-    let wheels;
+    const yeahr = document.querySelector(".changeyeahr").value;
+    console.log(yeahr);
 
-    function leftWheel(event) {
-        wheels = 9;
-        console.log(wheels);
-    }
+    const owner = document.querySelector(".changeowner").checked;
+    console.log(owner);
 
-    function rightWheel(event) {
-        wheels = 8;
-        console.log(wheels);
-    }
-
-    /*--функции выбора топлива--*/
-
-    let fuel;
-
-    function diselFuel(event) {
-        fuel = 10;
-        console.log(fuel);
-    }
-
-    function gasFuel(event) {
-        fuel = 11;
-        console.log(fuel);
-    }
-
-    function electroFuel(event) {
-        fuel = 12;
-        console.log(fuel);
-    }
-
-    /*--функция выбора года--*/
-
-    let yeahr;
-
-    function changeYeahr(event) {
-        switch (event.target.value) {
-            case '2020':
-                yeahr = 1;
-                console.log(yeahr);
-                break;
-
-            case '2010':
-                yeahr = 2;
-                console.log(yeahr);
-                break;
-
-            case '2000':
-                yeahr = 3;
-                console.log(yeahr);
-                break;
-            case '1990':
-                yeahr = 4;
-                console.log(yeahr);
-                break;
-            case '1980':
-                yeahr = 5;
-                console.log(yeahr);
-                break;
-            case '1979':
-                yeahr = 6;
-                console.log(yeahr);
-                break;
-        }
-    }
-
-    /*--функция выбора единственного владельца--*/
-
-    let owner;
-
-    function changeOwner(event) {
-        owner = 22;
-        console.log(owner);
-    };
-
-    /*--объем двигателя--*/
-
-    let volume = document.querySelectorAll(".volumevalue")[0].value;
+    const volume = document.querySelector(".volumevalue").value;
     console.log(volume);
 
+    if (rightwheels) sum += 1;
+    if (leftwheels) sum += 3;
+    if (diselFuel) sum += 2;
+    if (gasFuel) sum += 4;
+    if (electroFuel) sum += 1;
+    if (owner) sum += 5;
 
+    sum += +models + +yeahr + +volume;
+
+    let result = sum;
+
+    console.log(result);
+    document.getElementById("result").innerHTML = result;
 
 }
